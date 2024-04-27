@@ -1,0 +1,25 @@
+{
+	"$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
+	"identifier": "com.sindresorhus.sketch.plugin.icon-preview",
+	"name": "Icon Preview",
+	"version": "0.0.0",
+	"description": "Preview macOS app icons using the Icon Preview app",
+	"homepage": "https://github.com/sindresorhus/sketch-icon-preview",
+	"appcast": "https://example.com/select-shapes-plugin-appcast.xml",
+	"author": "Sindre Sorhus",
+	"authorEmail": "sindresorhus@gmail.com",
+	"compatibleVersion": "60",
+	"icon": "icon.png",
+	"commands": [
+		{
+			"name": "Preview",
+			"identifier": "preview",
+			"script": "./index.js",
+			"handlers": {
+				"actions": {
+					"DocumentSaved": "onDocumentSaved"
+				}
+			}
+		}
+	]
+}

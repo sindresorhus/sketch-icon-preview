@@ -1,0 +1,21 @@
+{
+	"private": true,
+	"repository": "sindresorhus/sketch-icon-preview",
+	"skpm": {
+		"name": "icon-preview",
+		"manifest": "src/manifest.json",
+		"main": "icon-preview.sketchplugin",
+		"assets": [
+			"assets/**/*"
+		]
+	},
+	"scripts": {
+		"build": "skpm-build",
+		"watch": "skpm-build --watch",
+		"start": "skpm-build --watch --run",
+		"postinstall": "npm run build && skpm-link"
+	},
+	"devDependencies": {
+		"@skpm/builder": "^0.9.5"
+	}
+}
