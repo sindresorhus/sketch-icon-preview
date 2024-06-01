@@ -2,7 +2,7 @@
 
 > Sketch plugin to preview macOS app icons in the Dock using the [Icon Preview](https://sindresorhus.com/icon-preview) app
 
-The artboard of your macOS app icon must be named “AppIcon”.
+The artboard of your macOS app icon must have a name that contains the text “AppIcon”.
 
 The icon is updated in the Dock automatically when the document is saved.
 

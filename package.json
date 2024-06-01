@@ -1,6 +1,7 @@
 {
-	"version": "1.0.0",
 	"private": true,
+	"version": "1.0.0",
+	"type": "module",
 	"repository": "sindresorhus/sketch-icon-preview",
 	"skpm": {
 		"name": "icon-preview",

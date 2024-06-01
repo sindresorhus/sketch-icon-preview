@@ -1,6 +1,8 @@
 /* globals NSWorkspace, NSURL, NSWorkspaceLaunchWithoutActivation, NSTemporaryDirectory */
 import sketch from 'sketch';
 
+const iconPreviewBundleId = 'com.sindresorhus.Icon-Preview';
+
 function openInIconPreview(artboard, directoryPath) {
 	const workspace = NSWorkspace.sharedWorkspace();
 	const filePath = `${directoryPath}${artboard.id}.png`;
@@ -9,7 +11,7 @@ function openInIconPreview(artboard, directoryPath) {
 		[
 			NSURL.fileURLWithPath(filePath),
 		],
-		'com.sindresorhus.Icon-Preview',
+		iconPreviewBundleId,
 		NSWorkspaceLaunchWithoutActivation,
 		null,
 		null,
@@ -19,7 +21,7 @@ function openInIconPreview(artboard, directoryPath) {
 export function onDocumentSaved(context) {
 	const document = sketch.fromNative(context.actionContext.document);
 
-	const selectedArtboard = document.selectedPage.layers.find(layer => layer.type === 'Artboard' && layer.name === 'AppIcon');
+	const selectedArtboard = document.selectedPage.layers.find(layer => layer.type === 'Artboard' && layer.name.includes('AppIcon'));
 	if (!selectedArtboard) {
 		return;
 	}
